@@ -1,17 +1,18 @@
 <template>
  <div>
-   <Inputtext  />
-   <Button label="Bite"></Button>    
+   <!-- header -->
+  <!-- pages routée -->
  </div>
 </template>
 
+
 <script>
 
-
-export default {
-  
+export default {  
 }
+
 </script>
+
 
 <style>
 #app {
