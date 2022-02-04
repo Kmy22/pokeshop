@@ -3,7 +3,7 @@
 #Recup le projet : 
 
 - 1- git pull [alias] [branch]
-- 2- npm insatall   (permet de recup toute les dépendance si y'en a des nouvelles) 
+- 2- npm install   (permet de recup toute les dépendance si y'en a des nouvelles) 
 - 3- npm run serve (lancer le projet ) 
 
 
