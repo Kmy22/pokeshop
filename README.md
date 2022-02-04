@@ -1,24 +1,21 @@
 # pokeshop
 
-## Project setup
-```
-npm install
-```
+#Recup le projet : 
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+- 1- git pull [alias] [branch]
+- 2- npm insatall   (permet de recup toute les dépendance si y'en a des nouvelles) 
+- 3- npm run serve (lancer le projet ) 
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
+#Last Update :  04/02/2022
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- création de 2 vues de test (TestNotes et TestConnexion) 
+- commenté/décommenter dans le main.js pour choisir la vue a voir ! 
+
+
+#TODO :
+
+- tuto : https://openclassrooms.com/fr/courses/6390311-creez-une-application-web-avec-vue-js
+- ajout d'un routeur 
+npm install vue-routeur 
+- extention vscode : vetur  (permet de gerer mieux vue) 
