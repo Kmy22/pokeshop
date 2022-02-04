@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 
-//prendre une au choix 
+//####### CHOISIR QUELLE PAGE VOIR ######
 //import App from './App.vue'
 import TestConnexion from './vues/TestConnexion.vue'
 //import TestConnexion from './vues/TestNotes.vue'
@@ -16,7 +16,7 @@ import 'primevue/resources/themes/saga-blue/theme.css'       //theme
 import 'primevue/resources/primevue.min.css'                 //core css
 import 'primeicons/primeicons.css'                           //icons
 
-//prendre une au choix 
+//####### CHOISIR QUELLE PAGE VOIR ######
 //const app = createApp(App);
 const app = createApp(TestConnexion);
 //const app = createApp(TestNotes);
