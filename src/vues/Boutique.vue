@@ -3,29 +3,29 @@ import DataView from 'primevue/dataview';
 export default {
     data() {
         return {
-            cars: null,
+            pokemons: null,
         }
     },
-    carService: null,
+    pokemonsService: null,
     created() {
-        this.carService = new CarService();
+        this.pokemonsService = new PokemonService();
     },
     mounted() {
-        this.carService.getCarsLarge().then(data => this.cars = data);
+          this.pokemonsService.then(data => this.pokemons = data);
     }
 }
 
 
 <template #list="slotProps">
 	<div class="col-12">
-        <div class="car-details">
+        <div class="pokemon-details">
             <div>
-                <img :src="'demo/images/car/' + slotProps.data.brand + '.png'" :alt="slotProps.data.brand"/>
+                <img :src="'PokemonImage/' + slotProps.data.image + '.png'" :alt="slotProps.data.image"/>
                 <div class="grid">
-                    <div class="col-12">Vin: <b>{{slotProps.data.vin}}</b></div>
-                    <div class="col-12">Year: <b>{{slotProps.data.year}}</b></div>
-                    <div class="col-12">Brand: <b>{{slotProps.data.brand}}</b></div>
-                    <div class="col-12">Color: <b>{{slotProps.data.color}}</b></div>
+                    <div class="col-12">id: <b>{{slotProps.data.id}}</b></div>
+                    <div class="col-12">Description: <b>{{slotProps.data.description}}</b></div>
+                    <div class="col-12">Nom: <b>{{slotProps.data.nom}}</b></div>
+                    <div class="col-12">prix: <b>{{slotProps.data.prix}}</b></div>
                 </div>
             </div>
             <Button icon="pi pi-search"></Button>
@@ -34,9 +34,9 @@ export default {
 </template>
 <template #grid="slotProps">
 	<div style="padding: .5em" class="col-12 md:col-3">
-		<Panel :header="slotProps.data.vin" style="text-align: center">
-			<img :src="'demo/images/car/' + slotProps.data.brand + '.png'" :alt="slotProps.data.brand"/>
-			<div class="car-detail">{{slotProps.data.year}} - {{slotProps.data.color}}</div>
+		<Panel :header="slotProps.data.id" style="text-align: center">
+			<img :src="'PokemonImage/' + slotProps.data.nom + '.png'" :alt="slotProps.data.nom"/>
+			<div class="pokemon-detail">{{slotProps.data.description}} - {{slotProps.data.prix}}</div>
 			<Button icon="pi pi-search"></Button>
 		</Panel>
 	</div>
@@ -45,15 +45,16 @@ export default {
 <template #header>Header Content</template>
 <template #footer>Footer Content</template>
 <template #empty>No records found.</template>
-<DataView :value="cars" :layout="layout">
+
+<DataView :value="pokemons" :layout="layout">
 	<template #header>
 		<DataViewLayoutOptions v-model="layout"></DataViewLayoutOptions>
 	</template>
 	<template #list="slotProps" >
-		<div>Vin: <b>{{slotProps.data.vin}}</b></div>
+		<div>id: <b>{{slotProps.data.id}}</b></div>
 	</template>
 	<template #grid="slotProps">
-		<div>Vin: <b>{{slotProps.data.vin}}</b></div>
+		<div>id: <b>{{slotProps.data.id}}</b></div>
 	</template>
 </DataView>
 
