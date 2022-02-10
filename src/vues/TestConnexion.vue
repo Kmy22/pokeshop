@@ -1,15 +1,16 @@
 <template>
  <div>
-   <h1> ---- TEST DE CONNEXION ---- </h1>
+   <h1> TEST DE CONNEXION</h1>
    User  :<Inputtext v-model="text_user" />
    Pwd :<Inputtext v-model="text_pwd" />
    <Button label="Connexion" icon = "pi pi-user" @click="connexion"></Button>  
    <p>
     DEBUG inputs : {{text_user}}  | {{text_pwd}}
-   </p>
-    
-   <Toast />
+   </p>    
+   <Toast />   
  </div>
+
+ 
 </template>
 
 <script>
@@ -27,7 +28,6 @@ export default defineComponent({
       toast.add({sererity: 'info', summary: 'Connexion', detail: "user :" + text_user.value + "pwd : " + text_pwd.value });
       console.log(text_user.value + " " + text_pwd.value);
     }
-
 
       return{
         text_user, 
