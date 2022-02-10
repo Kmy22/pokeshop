@@ -1,9 +1,6 @@
 import { createApp } from 'vue'
-
-//####### CHOISIR QUELLE PAGE VOIR ######
-//import App from './App.vue'
-import TestConnexion from './vues/TestConnexion.vue'
-//import TestConnexion from './vues/TestNotes.vue'
+import App from './App.vue'
+import router from './router'
 
 import Primevue from 'primevue/config'
 import Button from 'primevue/button'
@@ -16,11 +13,9 @@ import 'primevue/resources/themes/saga-blue/theme.css'       //theme
 import 'primevue/resources/primevue.min.css'                 //core css
 import 'primeicons/primeicons.css'                           //icons
 
-//####### CHOISIR QUELLE PAGE VOIR ######
-//const app = createApp(App);
-const app = createApp(TestConnexion);
-//const app = createApp(TestNotes);
 
+const app = createApp(App);
+app.use(router);
 app.use(Primevue);
 app.use(ToastService);
 
@@ -29,5 +24,5 @@ app.component('Inputtext',Inputtext);
 app.component('Rating',Rating);
 app.component('Toast',Toast);
 
-
 app.mount('#app');
+

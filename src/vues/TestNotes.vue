@@ -15,7 +15,7 @@
 import { defineComponent, ref } from "vue";
 import {useToast} from 'primevue/usetoast';
 
-export default defineComponent({
+export default defineComponent({   
   setup() {
       const toast = useToast();     
       const val = ref(3);
@@ -30,6 +30,8 @@ export default defineComponent({
       }
   }
 })
+
+
 
 </script>
 
