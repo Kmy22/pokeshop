@@ -4,6 +4,7 @@
    <b>"ici le bandeau qui bouge pas "</b>
    <router-link to="/TestConnexion"><li> Test Connexion </li> </router-link>  
    <router-link to="/TestNotes">  <li>Test Notes</li> </router-link>  
+   <router-link to="/Boutique">  <li> Boutique </li> </router-link>  
    <h1>_______________________________________________________________</h1>
    <b>"puis la page qui change"</b>
   <!-- pages routée -->
