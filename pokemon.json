@@ -1,0 +1,184 @@
+{
+	"data":[
+    {
+        "id": 1,
+        "nom": "Pikachu",
+        "description": "pokemon souris electrique",
+        "prix": 10,
+        "image": "pikachu.png",
+        "dispo": 1,
+        "categorie": "Electique"
+    },
+    {
+        "id": 2,
+        "nom": "Carapuce",
+        "description": "pokemon tortue aquatique",
+        "prix": 15,
+        "image": "carapuce.png",
+        "dispo": 1,
+        "categorie": "Eau"
+    },
+    {
+        "id": 3,
+        "nom": "Bulbizare",
+        "description": "pokemon plante",
+        "prix": 15,
+        "image": "bulbizare.png",
+        "dispo": 1,
+        "categorie": "Plante"
+    },
+    {
+        "id": 4,
+        "nom": "Salameche",
+        "description": "pokemon lézard feu",
+        "prix": 15,
+        "image": "salameche.png",
+        "dispo": 1,
+        "categorie": "Feu"
+    },
+    {
+        "id": 5,
+        "nom": "Racaillou",
+        "description": "pokemon caillou",
+        "prix": 5,
+        "image": "racaillou.png",
+        "dispo": 1,
+        "categorie": "Roche"
+    },
+    {
+        "id": 6,
+        "nom": "Riolu",
+        "description": "pokemon combattant",
+        "prix": 10,
+        "image": "riolu.png",
+        "dispo": 1,
+        "categorie": "Combat"
+    },
+    {
+        "id": 7,
+        "nom": "Ramoloss",
+        "description": "pokemon ronpicheur",
+        "prix": 5,
+        "image": "ramoloss.png",
+        "dispo": 1,
+        "categorie": "Eau"
+    },
+    {
+        "id": 8,
+        "nom": "Chenipan",
+        "description": "pokemon chenille",
+        "prix": 5,
+        "image": "chenipan.png",
+        "dispo": 1,
+        "categorie": "Insecte"
+    },
+    {
+        "id": 9,
+        "nom": "Barpau",
+        "description": "pokemon moche",
+        "prix": 20,
+        "image": "barpau.png",
+        "dispo": 1,
+        "categorie": "Eau"
+    },
+    {
+        "id": 10,
+        "nom": "Negapi",
+        "description": "pokemon souris électique",
+        "prix": 10,
+        "image": "negapi.png",
+        "dispo": 1,
+        "categorie": "Electrique"
+    },
+    {
+        "id": 11,
+        "nom": "Posipi",
+        "description": "pokemon souris électique",
+        "prix": 10,
+        "image": "posipi.png",
+        "dispo": 1,
+        "categorie": "Electrique"
+    },
+    {
+        "id": 12,
+        "nom": "Evoli",
+        "description": "pokemon renard évolutif",
+        "prix": 17,
+        "image": "evoli.png",
+        "dispo": 1,
+        "categorie": "Normal"
+    },
+    {
+        "id": 13,
+        "nom": "Fantominus",
+        "description": "pokemon fantome",
+        "prix": 8,
+        "image": "fantominus.png",
+        "dispo": 1,
+        "categorie": "Spectre"
+    },
+    {
+        "id": 14,
+        "nom": "Mew",
+        "description": "pokemon génétique légendaire",
+        "prix": 70,
+        "image": "mew.png",
+        "dispo": 1,
+        "categorie": "Psy"
+    },
+    {
+        "id": 15,
+        "nom": "Charpenti",
+        "description": "pokemon poutre",
+        "prix": 10,
+        "image": "charpenti.png",
+        "dispo": 1,
+        "categorie": "Combat"
+    },
+    {
+        "id": 16,
+        "nom": "Miaouss",
+        "description": "pokemon chat",
+        "prix": 10,
+        "image": "miaouss.png",
+        "dispo": 1,
+        "categorie": "Normal"
+    },
+    {
+        "id": 17,
+        "nom": "Rocabot",
+        "description": "pokemon chien",
+        "prix": 15,
+        "image": "rokabot.png",
+        "dispo": 1,
+        "categorie": "Roche"
+    },
+    {
+        "id": 18,
+        "nom": "Magicarpe",
+        "description": "pokemon inutile",
+        "prix": 15,
+        "image": "magicarpe.png",
+        "dispo": 1,
+        "categorie": "Eau"
+    },
+    {
+        "id": 19,
+        "nom": "Celebi",
+        "description": "pokemon gardien",
+        "prix": 60,
+        "image": "celebi.png",
+        "dispo": 0,
+        "categorie": "psy"
+    },
+    {
+        "id": 20,
+        "nom": "Chapignon",
+        "description": "pokemon champignon",
+        "prix": 60,
+        "image": "chapignon.png",
+        "dispo": 1,
+        "categorie": "Plante,Combat"
+    }
+]
+}
