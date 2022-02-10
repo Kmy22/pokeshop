@@ -44,7 +44,7 @@ export default {
 
 <template #header>Header Content</template>
 <template #footer>Footer Content</template>
-<template #empty>No records found.</template>
+<template #empty>Pas de pokemon disponible.</template>
 
 <DataView :value="pokemons" :layout="layout">
 	<template #header>
