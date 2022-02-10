@@ -3,7 +3,6 @@ import Home from '../vues/Home.vue'
 import TestConnexion from '../vues/TestConnexion.vue'
 import TestNotes from '../vues/TestNotes.vue'
 import Boutique from '../vues/Boutique.vue'
-import Connexion from '../vues/Connexion.vue'
 
 const routes = [
   {
@@ -25,11 +24,6 @@ const routes = [
     path: '/Boutique',
     name: 'Boutique',
     component: Boutique
-  },
-  {
-    path: '/Connexion',
-    name: 'Connexion',
-    component: Connexion
   }
 ]
 

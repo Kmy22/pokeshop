@@ -9,11 +9,9 @@ import Toast from 'primevue/toast'
 import ToastService from 'primevue/toastservice'
 import TabMenu from 'primevue/tabmenu';
 
-
 import 'primevue/resources/themes/saga-blue/theme.css'       //theme
 import 'primevue/resources/primevue.min.css'                 //core css
 import 'primeicons/primeicons.css'                           //icons
-
 
 const app = createApp(App);
 app.use(router);

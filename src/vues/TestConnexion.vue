@@ -1,11 +1,11 @@
 <template>
  <div>
-   <h1> TEST DE CONNEXION</h1>
+   <h1>CONNEXION</h1>
    User  :<Inputtext v-model="text_user" />
-   Pwd :<Inputtext v-model="text_pwd" />
+   Pwd   :<Inputtext v-model="text_pwd" />
    <Button label="Connexion" icon = "pi pi-user" @click="connexion"></Button>  
    <p>
-    DEBUG inputs : {{text_user}}  | {{text_pwd}}
+   <!--  DEBUG inputs : {{text_user}}  | {{text_pwd}} -->
    </p>    
    <Toast />   
  </div>
