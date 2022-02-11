@@ -21,7 +21,7 @@ import {API_BACK} from '../http-constants';
 import router from '../router'
 
 export default defineComponent({
-  setup() {
+  setup() {      
       const toast = useToast();
       const text_user = ref("user name") ;  
       const text_pwd = ref("password");      
@@ -41,20 +41,19 @@ export default defineComponent({
             window.sessionStorage.setItem('token', response.data.token);
             window.sessionStorage.setItem('user', text_user.value);
 
-
-            // un truc du genre this.$router.push('/')
-            router.push('/')
+            router.push('/') ;            
+            window.location.reload();
+            //router.push('/') ;          
+            
           } else {
             toast.add({sererity: 'info', summary: 'Connexion impossible', detail: 'Identifiant ou mot de passe incorrect'});
-          }
-
-          
+          }        
 
         })
         .catch(e => {
           console.error(e);
           toast.add({sererity: 'info', summary: 'Connexion impossible', detail: e });
-      })
+      })  
     }
 
       return{

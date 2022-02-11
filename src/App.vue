@@ -1,15 +1,17 @@
 <template>
  <div>
-    <!-- header -->    
-    <h1>PokeShope</h1>
-
-
+    <!-- header -->     
+      
+     <h1>PokeShope  </h1>  
     <Bonjour/>
+       
 
 
-    <TabMenu :model="items" />
 
-    <b>"la page qui change"</b> 
+
+    <TabMenu :model="items" />  
+    
+    
     <router-view/>
   </div>
 </template>
@@ -28,7 +30,7 @@ export default {
                 {label: 'Home', icon: 'pi pi-fw pi-home', to: '/'},               
                 {label: 'TestNotes', icon: 'pi pi-fw pi-pencil', to: '/TestNotes'},
                 {label: 'Boutique', icon: 'pi pi-fw pi-file', to: '/Boutique'},
-                {label: 'autres..', icon: 'pi pi-fw pi-cog', to: '/Connexion'}
+                {label: 'Panier', icon: 'pi pi-fw pi-cog', to: '/Panier'}
             ]
 		}
   }/*,

@@ -1,35 +1,26 @@
 <template>
-    <div id="bjr">
-        <!--<h1 v-if="isAuth"> Bienvenue {{user}}</h1>
-        <router-link v-else to='/Connexion'> Connexion</router-link>-->
-        <h1> Bienvenue {{user2}}</h1>
-        <router-link to='/Connexion'> Connexion</router-link>
-    </div>
+    <div id="bjr">             
+        <div v-if="isAuth" style="">
+            <h1> Bienvenue {{user2}}</h1>  
+            <button class="p-button p-component p-button-raised p-button-danger p-mb-2" type="button" data-v-6edbeebf>
+                <span class="p-button-label">Déconnexion</span> 
+            </button>
+        </div>        
+        <router-link v-else to='/Connexion'> Connexion</router-link>
+    </div>   
 </template>
 
 
 <script>
 export default {  
-    el: '#bjr',
-    data() {
-        return {
-            user : window.sessionStorage.getItem('user')
-        }
-    },
+    el: '#bjr',    
     computed: {
         user2 : function(){
             return window.sessionStorage.getItem('user')
+        } ,
+        isAuth : function(){
+            return window.sessionStorage.getItem('user')            
         } 
-    }
-    /*mounted() {
-        if (window.sessionStorage.getItem('user')) {
-            this.user = window.sessionStorage.getItem('user');
-        }
-    },
-    watch: {
-        user(newUser) {
-        window.sessionStorage.setItem('user', newUser);
-        }
-    }*/
+    }   
 }
 </script>
