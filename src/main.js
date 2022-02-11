@@ -8,6 +8,9 @@ import Rating from 'primevue/rating'
 import Toast from 'primevue/toast'
 import ToastService from 'primevue/toastservice'
 import TabMenu from 'primevue/tabmenu';
+import DataView from 'primevue/dataview';
+import Dropdown from 'primevue/dropdown';
+import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions';
 
 import 'primevue/resources/themes/saga-blue/theme.css'       //theme
 import 'primevue/resources/primevue.min.css'                 //core css
@@ -17,6 +20,9 @@ const app = createApp(App);
 app.use(router);
 app.use(Primevue);
 app.use(ToastService);
+app.component('DataView',DataView);
+app.component('Dropdown',Dropdown);
+app.component('DataViewLayoutOptions',DataViewLayoutOptions);
 
 app.component('Button',Button);
 app.component('Inputtext',Inputtext);
