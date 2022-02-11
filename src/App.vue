@@ -28,7 +28,7 @@ export default {
                 {label: 'Home', icon: 'pi pi-fw pi-home', to: '/'},               
                 {label: 'TestNotes', icon: 'pi pi-fw pi-pencil', to: '/TestNotes'},
                 {label: 'Boutique', icon: 'pi pi-fw pi-file', to: '/Boutique'},
-                {label: 'autres..', icon: 'pi pi-fw pi-cog', to: '/Connexion'}
+                {label: 'Panier', icon: 'pi pi-fw pi-cog', to: '/Panier'}
             ]
 		}
   }/*,
