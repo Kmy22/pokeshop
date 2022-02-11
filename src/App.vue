@@ -1,15 +1,17 @@
 <template>
  <div>
-    <!-- header -->    
-    <h1>PokeShope</h1>
-
-
+    <!-- header -->     
+      
+     <h1>PokeShope  </h1>  
     <Bonjour/>
+       
 
 
-    <TabMenu :model="items" />
 
-    <b>"la page qui change"</b> 
+
+    <TabMenu :model="items" />  
+    
+    
     <router-view/>
   </div>
 </template>
