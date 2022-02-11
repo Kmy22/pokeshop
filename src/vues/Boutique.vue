@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <DataView :value="products" :layout="layout" :paginator="true" :rows="9" :sortOrder="sortOrder" :sortField="sortField">
+        <DataView :value="products" :layout="layout"  >
 			<template #header>
                 <div class="grid grid-nogutter">
                     <div class="col-6" style="text-align: left">
@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import PokemonService from '../PokemonService';
+import PokemonService from '../PokemonService.js';
 
 export default {
     data() {
@@ -80,23 +80,6 @@ export default {
     },
     mounted() {
         this.pokemonService.getProducts().then(data => this.products = data);
-    },
-    methods: {
-        onSortChange(event){
-            const value = event.value.value;
-            const sortValue = event.value;
-
-            if (value.indexOf('!') === 0) {
-                this.sortOrder = -1;
-                this.sortField = value.substring(1, value.length);
-                this.sortKey = sortValue;
-            }
-            else {
-                this.sortOrder = 1;
-                this.sortField = value;
-                this.sortKey = sortValue;
-            }
-        }
     }
 }
 </script>
