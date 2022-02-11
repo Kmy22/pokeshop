@@ -6,17 +6,19 @@ export default class ProductService {
   
 
 	async getProducts() {
-		API_BACK.get('/pokemonList')
-        .then(response => {
-          console.log(response);
+    const token = window.sessionStorage.getItem('token');
+    const config = {headers: {'Authorization': `bearer${token}`}};
+    
+    API_BACK.get('/pokemonList', config)
+    .then(response => {
+        console.log(response.data);
+    
+    })
+    .catch(e => {
+        console.error(e);
+    })
 
-        })
-        .catch(e => {
-          console.error(e);
-
-      })
-    }
 
 
-
+  }
 }
