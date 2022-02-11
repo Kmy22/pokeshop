@@ -1,8 +1,12 @@
 <template>
  <div>
     <!-- header -->    
-    <h1>PokeShope</h1>    
-    <router-link to='/Connexion'> Connexion</router-link>
+    <h1>PokeShope</h1>
+
+
+    <Bonjour/>
+
+
     <TabMenu :model="items" />
 
     <b>"la page qui change"</b> 
@@ -12,7 +16,12 @@
 
 
 <script>
+import Bonjour from './components/Bonjour.vue'
+
 export default {  
+  components: {
+    Bonjour
+  },
   data() {
 		return {
 			items: [
@@ -22,7 +31,15 @@ export default {
                 {label: 'autres..', icon: 'pi pi-fw pi-cog', to: '/Connexion'}
             ]
 		}
-  }
+  }/*,
+  computed: {
+  isAuth(){
+    return window.sessionStorage.getItem('token');
+  }/*,
+  user() {
+    return window.sessionStorage.getItem('user');
+  }*/
+  //}
 }
 </script>
 

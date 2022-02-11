@@ -38,8 +38,10 @@ export default defineComponent({
           //TODO
           if (response.status == 200) {
             toast.add({sererity: 'info', summary: 'Connexion réussie', detail: "Bienvenue "+text_user.value+" !" });
-            sessionStorage.setItem('token', response.data.token);
-            sessionStorage.setItem('user', text_user.value);
+            window.sessionStorage.setItem('token', response.data.token);
+            window.sessionStorage.setItem('user', text_user.value);
+
+
             // un truc du genre this.$router.push('/')
             router.push('/')
           } else {
@@ -51,7 +53,7 @@ export default defineComponent({
         })
         .catch(e => {
           console.error(e);
-          toast.add({sererity: 'info', summary: 'Connexion impossible', detail: "crash" });
+          toast.add({sererity: 'info', summary: 'Connexion impossible', detail: e });
       })
     }
 
