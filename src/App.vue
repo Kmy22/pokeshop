@@ -2,7 +2,7 @@
  <div>
     <!-- header -->    
     <h1>PokeShope</h1>    
-    <router-link to='/TestConnexion'> Connexion</router-link>    
+    <router-link to='/Connexion'> Connexion</router-link>
     <TabMenu :model="items" />
 
     <b>"la page qui change"</b> 

@@ -17,6 +17,8 @@
 
 import { defineComponent, ref } from "vue";
 import {useToast} from 'primevue/usetoast';
+import {API_BACK} from '../http-constants';
+import router from '../router'
 
 export default defineComponent({
   setup() {
@@ -25,8 +27,32 @@ export default defineComponent({
       const text_pwd = ref("password");      
 
     const connexion = () => {
-      toast.add({sererity: 'info', summary: 'Connexion', detail: "user :" + text_user.value + "pwd : " + text_pwd.value });
-      console.log(text_user.value + " " + text_pwd.value);
+      //console.log(text_user.value + " " + text_pwd.value);
+      const params = new URLSearchParams()
+      params.append('login', text_user.value)
+      params.append('pwd', text_pwd.value)
+
+      API_BACK.post('/connection', params)
+        .then(response => {
+          console.log(response);
+          //TODO
+          if (response.status == 200) {
+            toast.add({sererity: 'info', summary: 'Connexion réussie', detail: "Bienvenue "+text_user.value+" !" });
+            sessionStorage.setItem('token', response.data.token);
+            sessionStorage.setItem('user', text_user.value);
+            // un truc du genre this.$router.push('/')
+            router.push('/')
+          } else {
+            toast.add({sererity: 'info', summary: 'Connexion impossible', detail: 'Identifiant ou mot de passe incorrect'});
+          }
+
+          
+
+        })
+        .catch(e => {
+          console.error(e);
+          toast.add({sererity: 'info', summary: 'Connexion impossible', detail: "crash" });
+      })
     }
 
       return{

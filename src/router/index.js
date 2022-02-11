@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../vues/Home.vue'
-import TestConnexion from '../vues/TestConnexion.vue'
+import Connexion from '../vues/Connexion.vue'
 import TestNotes from '../vues/TestNotes.vue'
 import Boutique from '../vues/Boutique.vue'
 
@@ -11,9 +11,9 @@ const routes = [
     component: Home
   },
   {
-    path: '/TestConnexion',
-    name: 'TestConnexion',
-    component: TestConnexion
+    path: '/Connexion',
+    name: 'Connexion',
+    component: Connexion
   },
   {
     path: '/TestNotes',
