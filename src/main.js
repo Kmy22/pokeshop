@@ -11,6 +11,8 @@ import TabMenu from 'primevue/tabmenu';
 import DataView from 'primevue/dataview';
 import Dropdown from 'primevue/dropdown';
 import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions';
+import DataTable from 'primevue/datatable';
+import Column from 'primevue/column';
 
 import 'primevue/resources/themes/saga-blue/theme.css'       //theme
 import 'primevue/resources/primevue.min.css'                 //core css
@@ -23,6 +25,8 @@ app.use(ToastService);
 app.component('DataView',DataView);
 app.component('Dropdown',Dropdown);
 app.component('DataViewLayoutOptions',DataViewLayoutOptions);
+app.component('DataTable',DataTable);
+app.component('Column',Column);
 
 app.component('Button',Button);
 app.component('Inputtext',Inputtext);
