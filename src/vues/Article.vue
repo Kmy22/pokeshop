@@ -2,35 +2,7 @@
 
     <div class="card">
         <DataView :value="products" :layout="layout"  :sortOrder="sortOrder" :sortField="sortField">
-			<template #header>
-                <div class="grid grid-nogutter">
-                    <div class="col-6" style="text-align: left">
-                        <Dropdown v-model="sortKey" :options="sortOptions" optionLabel="label" placeholder="Sort By Price" @change="onSortChange($event)"/>
-                    </div>
-                    <div class="col-6" style="text-align: right">
-                        <DataViewLayoutOptions v-model="layout" />
-                    </div>
-                </div>
-			</template>
-
-			<template #list="slotProps">
-				<div class="col-12">
-					<div class="product-list-item">
-						<img :src="'/PokemonImage/'+slotProps.data.image" class="ImagePokemon"  style="cursor: pointer;" @click="ClicSurArticle"/>
-						<div class="product-list-detail"  style="cursor: pointer;" @click="ClicSurArticle">
-							<div class="product-name">{{slotProps.data.nom}}</div>
-							<div class="product-description">{{slotProps.data.description}}</div>
-							<i class="pi pi-tag product-category-icon"></i><span class="product-category">{{slotProps.data.categorie}}</span>
-						</div>
-						<div class="product-list-action">
-							<span class="product-price">${{slotProps.data.prix}}</span>
-							<Button icon="pi pi-shopping-cart" label="Ajouter au panier" :disabled="slotProps.data.dispo == '0'" @click="AjouteDansPanier"></Button>
-							<span :class="'product-badge status-'+slotProps.data.dispo.toString().toLowerCase()">{{slotProps.data.dispo}}</span>
-						</div>
-					</div>
-				</div>
-			</template>
-
+			
 			<template #grid="slotProps">
 				<div class="col-12 md:col-4">
 				<!--<div style="cursor: pointer;" onclick="theFunction()">-->
@@ -74,35 +46,16 @@ export default {
         return {
             products: null,
             layout: 'grid',
-            sortKey: null,
-            sortOrder: null,
-            sortField: null,
-            sortOptions: [
-                {label: 'Prix décroissant', value: '!prix'},
-                {label: 'Prix croissant', value: 'prix'},
-            ]
         }
     },
     productService: null,
     created() {
-        //this.pokemonService = new PokemonService();
-		/*this.getProducts().then(data => {
-			console.log("BOUTIQUE" + data)
-			this.products = data
-		});*/
 		this.getProducts();
-    },
-    mounted() {
-        //this.pokemonService.getProducts().then(data => {
-		/*this.getProducts().then(data => {
-			console.log("BOUTIQUE" + data)
-			this.products = data
-		});*/
-		//this.products = this.getProducts();
-		//console.log("BOUTIQUE" + this.getProducts());
     },
 	methods:{
         getProducts(){
+
+            // Recuperer seul l'article concerné (besoin d'une nouvelle requete api back) dans la 1ere data view + les notes et commentaires de l'article dans une seconde data view
 
             const token = window.sessionStorage.getItem('token');
             const config = {
@@ -165,8 +118,7 @@ export default {
                 })
 		},
 		ClicSurArticle(){
-			// Go sur la page article tout seul avc les commentaires et notes, sans doute passer l'id de larticle via le routeur
-			this.$router.push('/Article')
+			console.log("TEST CLICK SUR DIV")
 		}
     }
 }

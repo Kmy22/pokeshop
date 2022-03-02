@@ -2,12 +2,20 @@
 <template>
     <div>
         <div class="card">
+            <h1> Historique des commandes  </h1>
             <DataTable ref="dt" :value="products" dataKey="id" >
                 
 
                 <Column style="width: 3rem" :exportable="false"></Column>
                 <Column field="date" header="Date de commande" :sortable="true" style="min-width:16rem"></Column>
                 <Column field="prix" header="Prix" :sortable="true" style="min-width:16rem"></Column>
+                <Column :exportable="false" style="min-width:8rem">
+                    <template #body="slotProps">
+                        <!--<Button icon="pi pi-eye" class="p-button-rounded p-button-success mr-2" @click="editProduct(slotProps.data)" />-->
+                        <router-link :to="{ name: 'HistoriquePanierArticles', params: {idPanierRoute: slotProps.data.idPanier }}">Contenu Panier</router-link>
+                        <!-- todo par sur que ça marche-->
+                    </template>
+                </Column>
             </DataTable>
         </div>
 	</div>

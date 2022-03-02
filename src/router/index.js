@@ -5,6 +5,8 @@ import TestNotes from '../vues/TestNotes.vue'
 import Boutique from '../vues/Boutique.vue'
 import Panier from '../vues/Panier.vue'
 import HistoriquePanier from '../vues/HistoriquePanier.vue'
+import HistoriquePanierArticles from '../vues/HistoriquePanierArticles.vue'
+import Article from '../vues/Article.vue'
 
 const routes = [
   {
@@ -36,6 +38,19 @@ const routes = [
     path: '/HistoriquePanier',
     name: 'HistoriquePanier',
     component: HistoriquePanier
+  },
+  {
+    path: '/HistoriquePanierArticles/:idPanierRoute',
+    //path: '/HistoriquePanierArticles',
+    name: 'HistoriquePanierArticles',
+    component: HistoriquePanierArticles,
+    //props : { idPanierProps: String}
+    //props : true
+  },
+  {
+    path: '/Article',
+    name: 'Article',
+    component: Article
   }
 ]
 
