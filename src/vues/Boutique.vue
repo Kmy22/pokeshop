@@ -16,8 +16,8 @@
 			<template #list="slotProps">
 				<div class="col-12">
 					<div class="product-list-item">
-						<img :src="'/PokemonImage/'+slotProps.data.image" class="ImagePokemon"  style="cursor: pointer;" @click="ClicSurArticle"/>
-						<div class="product-list-detail"  style="cursor: pointer;" @click="ClicSurArticle">
+						<img :src="'/PokemonImage/'+slotProps.data.image" class="ImagePokemon"  style="cursor: pointer;" @click="ClicSurArticle(slotProps.data.id)"/>
+						<div class="product-list-detail"  style="cursor: pointer;" @click="ClicSurArticle(slotProps.data.id)">
 							<div class="product-name">{{slotProps.data.nom}}</div>
 							<div class="product-description">{{slotProps.data.description}}</div>
 							<i class="pi pi-tag product-category-icon"></i><span class="product-category">{{slotProps.data.categorie}}</span>
@@ -42,7 +42,7 @@
 							</div>
 							<span :class="'product-badge status-'+slotProps.data.dispo.toString().toLowerCase()">{{slotProps.data.dipso}}</span>
 						</div>
-						<div class="product-grid-item-content" style="cursor: pointer;" @click="ClicSurArticle">
+						<div class="product-grid-item-content" style="cursor: pointer;" @click="ClicSurArticle(slotProps.data.id)">
 							<!--<img src="https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png" :alt="slotProps.data.nom"/>-->
 							<!--<img :src="'../../PokemonImage/'+slotProps.data.image" :alt="'ça marche pas putain'"/>-->
 							<!--<img :src="require(`../assets/PokemonImage/${slotProps.data.image}`)"/>-->
@@ -164,9 +164,10 @@ export default {
                     console.error("CRASH" + e);
                 })
 		},
-		ClicSurArticle(){
+		ClicSurArticle(idPokemon){
+			console.log(idPokemon)
 			// Go sur la page article tout seul avc les commentaires et notes, sans doute passer l'id de larticle via le routeur
-			this.$router.push('/Article')
+			this.$router.push({ name: 'Article', params: {idPokemon: idPokemon }})
 		}
     }
 }

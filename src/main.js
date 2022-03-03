@@ -13,6 +13,8 @@ import Dropdown from 'primevue/dropdown';
 import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions';
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
+import Dialog from 'primevue/dialog';
+import Textarea from 'primevue/textarea';
 
 import 'primevue/resources/themes/saga-blue/theme.css'       //theme
 import 'primevue/resources/primevue.min.css'                 //core css
@@ -33,6 +35,8 @@ app.component('Inputtext',Inputtext);
 app.component('Rating',Rating);
 app.component('Toast',Toast);
 app.component('TabMenu',TabMenu);
+app.component('Dialog',Dialog)
+app.component('Textarea',Textarea)
 
 app.mount('#app');
 

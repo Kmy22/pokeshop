@@ -19,13 +19,55 @@
 
 
 
-                <Column field="dispo" header="Disponibilite" :sortable="true" style="min-width:16rem"></Column>
-                <Column field="categorie" header="Categorie" :sortable="true" style="min-width:16rem"></Column>
-                <Column field="quantite" header="Quantite" :sortable="true" style="min-width:16rem"></Column>
-                <Column field="prix" header="Prix/u" :sortable="true" style="min-width:16rem"></Column>
+                <Column field="dispo" header="Disponibilite" :sortable="true" style="min-width:10rem"></Column>
+                <Column field="categorie" header="Categorie" :sortable="true" style="min-width:15rem"></Column>
+                <Column field="quantite" header="Quantite" :sortable="true" style="min-width:15rem"></Column>
+                <Column field="prix" header="Prix/u" :sortable="true" style="min-width:15rem"></Column>
                 <Column field="prixTot" header="Prix total ligne" :sortable="true" style="min-width:16rem"></Column>
+                <Column :exportable="false" style="min-width:8rem">
+                    <template #body="slotProps">
+                        <Button icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" @click="ajouteComm(slotProps.data.idPokemon)" />
+                    </template>
+                </Column>
             </DataTable>
         </div>
+
+
+
+
+
+
+
+
+        <Dialog :visible="commentaireDialog" :style="{width: '450px'}" header="Ajout d'un commentaire" :modal="true" class="p-fluid">
+           
+           <div class="field">
+                <label for="Note">Description</label>
+                <Rating v-model=commentaire.note :cancel="false"/>
+            </div>
+
+            <div class="field">
+                <label for="description">Description</label>
+                <Textarea id="description" v-model="commentaire.description" required="true" rows="3" cols="20" />
+            </div>
+
+            <template #footer>
+                <Button label="Cancel" icon="pi pi-times" class="p-button-text" @click="hideDialog"/>
+                <Button label="Save" icon="pi pi-check" class="p-button-text" @click="saveComm" />
+            </template>
+        </Dialog>
+
+
+
+
+
+
+
+
+
+
+
+
 	</div>
 </template>
 
@@ -40,7 +82,10 @@ export default {
             product: {},
             filters: {},
             prixTotPanier: 0,
-            datePanier : ""
+            datePanier : "",
+            commentaireDialog: false,
+            commentaire: {},
+            idPokemonSelect: null
         }
     },
     props: {
@@ -84,6 +129,52 @@ export default {
                 .catch(e => {
                     console.error("CRASH" + e);
                 })
+
+        },
+        ajouteComm(idPokemon)
+        {
+            console.log(idPokemon)
+            this.idPokemonSelect = idPokemon
+            this.commentaireDialog = true
+        },
+        hideDialog(){
+            this.commentaireDialog = false,
+            this.idPokemonSelect = null
+        },
+        saveComm(){
+            console.log(this.commentaire.note)
+            console.log(this.commentaire.description)
+
+
+
+            const token = window.sessionStorage.getItem('token');
+            const config = {
+                headers: {'Authorization': `bearer ${token}`}
+            };
+
+            // Bsn id pokemon TODO
+
+            const body = {
+                avis: this.commentaire.description,
+                note: this.commentaire.note
+            };
+
+
+
+            API_BACK.post('/ajouteAvisPokemon/'+this.idPokemonSelect, body, config)
+
+
+                .then(response => {
+                    console.log(response);
+                })
+                .catch(e => {
+                    console.error("CRASH" + e);
+                })
+
+
+
+            this.commentaireDialog = false;
+            this.commentaire = {};
 
         }
     }

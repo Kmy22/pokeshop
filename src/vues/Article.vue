@@ -1,8 +1,8 @@
 <template>
 
     <div class="card">
-        <DataView :value="products" :layout="layout"  :sortOrder="sortOrder" :sortField="sortField">
-			
+        <DataView :value="products" :layout="layout">
+
 			<template #grid="slotProps">
 				<div class="col-12 md:col-4">
 				<!--<div style="cursor: pointer;" onclick="theFunction()">-->
@@ -33,7 +33,34 @@
 					</div>
 				</div>
 			</template>
+			
 		</DataView>
+
+		<h1> Commentaires </h1>
+
+		<DataView :value="commentaires" :layout="layout">
+
+			<template #grid="slotProps">
+				<div class="col-12 md:col-4">
+				<!--<div style="cursor: pointer;" onclick="theFunction()">-->
+					<div class="product-grid-item card">
+
+						<div class="product-grid-item-content">
+							
+							<!--<div class="product-name">{{slotProps.data.note}}</div>-->
+							<Rating v-model=slotProps.data.note :cancel="false" :readonly="true"/>
+							<div class="product-description">{{slotProps.data.commentaire}}</div>
+							
+						</div>
+						
+					</div>
+				</div>
+			</template>
+			
+		</DataView>
+
+
+
 	</div>
 </template>
 
@@ -45,6 +72,7 @@ export default {
     data() {
         return {
             products: null,
+			commentaires: null,
             layout: 'grid',
         }
     },
@@ -64,16 +92,27 @@ export default {
 
             // #### TEST Temporaire pour validation requete sur back
 
-            API_BACK.get('/pokemonList', config)
+			const idPokemon = this.$route.params.idPokemon
+
+            API_BACK.get('/pokemon/'+idPokemon, config)
                 .then(response => {
                     console.log(response);
 					this.products = response.data;
-                    return response.data
                 })
                 .catch(e => {
                     console.error("CRASH" + e);
-					return null;
                 })
+
+			API_BACK.get('/avisPokemon/'+idPokemon, config)
+                .then(response => {
+                    console.log(response);
+					this.commentaires = response.data;
+                })
+                .catch(e => {
+                    console.error("CRASH" + e);
+                })
+
+
         },
 		onSortChange(event){
             const value = event.value.value;
@@ -116,9 +155,6 @@ export default {
                 .catch(e => {
                     console.error("CRASH" + e);
                 })
-		},
-		ClicSurArticle(){
-			console.log("TEST CLICK SUR DIV")
 		}
     }
 }

@@ -48,7 +48,7 @@ const routes = [
     //props : true
   },
   {
-    path: '/Article',
+    path: '/Article/:idPokemon',
     name: 'Article',
     component: Article
   }
