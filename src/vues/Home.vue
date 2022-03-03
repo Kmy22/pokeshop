@@ -1,5 +1,7 @@
  <template>
-      <h1> Page d'accueil </h1>
+      <img src="PokeContent.png"
+  alt="PokemonContent">
+
 </template>  
 
 
@@ -12,5 +14,9 @@
 
 
  <style>
- 
+ img {
+  width: 100%;
+  height: auto;
+}
+
  </style>
