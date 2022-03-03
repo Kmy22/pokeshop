@@ -5,8 +5,12 @@
             <button class="p-button p-component p-button-raised p-button-danger p-mb-2" type="button" data-v-6edbeebf>
                 <span class="p-button-label" @click="deconnexion">Déconnexion</span> 
             </button>
-        </div>        
-        <router-link v-else to='/Connexion'> Connexion</router-link>
+        </div> 
+        <div v-else>
+            <router-link to='/Connexion' style="margin-right:20px"> Connexion </router-link>
+            <router-link to='/Inscription' style="margin-left:20px"> Inscription</router-link>
+        </div>
+        
     </div>   
 </template>
 

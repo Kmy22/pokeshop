@@ -42,7 +42,7 @@
         <Dialog :visible="commentaireDialog" :style="{width: '450px'}" header="Ajout d'un commentaire" :modal="true" class="p-fluid">
            
            <div class="field">
-                <label for="Note">Description</label>
+                <label for="Note">Note</label>
                 <Rating v-model=commentaire.note :cancel="false"/>
             </div>
 
@@ -151,9 +151,6 @@ export default {
             const config = {
                 headers: {'Authorization': `bearer ${token}`}
             };
-
-            // Bsn id pokemon TODO
-
             const body = {
                 avis: this.commentaire.description,
                 note: this.commentaire.note

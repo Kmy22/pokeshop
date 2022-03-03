@@ -3,6 +3,7 @@
     <div>
         <div class="card">
             <h1> Prix total du panier : {{prixTotPanier}} </h1>
+            <Button label="Passer la commande" icon="pi pi-fw pi-shopping-cart" class="p-button-text" @click="paye" />
 
             <DataTable ref="dt" :value="products" dataKey="id" >
                 
@@ -34,6 +35,7 @@
 //import { FilterMatchMode } from 'primevue/api';
 import {API_BACK} from '../http-constants';
 
+
 export default {
     data() {
         return {
@@ -41,7 +43,8 @@ export default {
             product: {},
             filters: {},
             //submitted: false,
-            prixTotPanier: 0
+            prixTotPanier: 0,
+            idPanier: 0
         }
     },
     //productService: null,
@@ -81,6 +84,7 @@ export default {
                     if (response.data.idPanier) {
                         this.prixTotPanier = response.data.prix
                         idPanierPasCommende = response.data.idPanier;
+                        this.idPanier = idPanierPasCommende
                         API_BACK.get('/PokemonPanier/'+idPanierPasCommende, config)
                             .then(response => {
                                 console.log(response);
@@ -94,10 +98,30 @@ export default {
                 .catch(e => {
                     console.error("CRASH" + e);
                 })
-
-
-
+        },
+        paye(){
             
+            console.log("paye idpanier : " + this.idPanier);
+
+            const token = window.sessionStorage.getItem('token');
+            const config = {
+                headers: {'Authorization': `bearer ${token}`}
+            };
+
+            const body = {
+                idPanier: this.idPanier
+            };
+
+            API_BACK.post('/payePanier', body, config)
+                .then(response => {
+                    console.log(response);
+                })
+                .catch(e => {
+                    console.error("CRASH" + e);
+                })
+
+            // TODO routeur push commande
+            this.$router.push('/HistoriquePanier')
         }
     }
 }

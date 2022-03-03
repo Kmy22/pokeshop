@@ -7,6 +7,7 @@ import Panier from '../vues/Panier.vue'
 import HistoriquePanier from '../vues/HistoriquePanier.vue'
 import HistoriquePanierArticles from '../vues/HistoriquePanierArticles.vue'
 import Article from '../vues/Article.vue'
+import Inscription from '../vues/Inscription.vue'
 
 const routes = [
   {
@@ -51,7 +52,12 @@ const routes = [
     path: '/Article/:idPokemon',
     name: 'Article',
     component: Article
-  }
+  },
+  {
+    path: '/Inscription',
+    name: 'Inscription',
+    component: Inscription
+  },
 ]
 
 const router = createRouter({

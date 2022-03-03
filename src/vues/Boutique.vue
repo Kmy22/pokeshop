@@ -24,7 +24,7 @@
 						</div>
 						<div class="product-list-action">
 							<span class="product-price">${{slotProps.data.prix}}</span>
-							<Button icon="pi pi-shopping-cart" label="Ajouter au panier" :disabled="slotProps.data.dispo == '0'" @click="AjouteDansPanier"></Button>
+							<Button icon="pi pi-shopping-cart" label="Ajouter au panier" :disabled="slotProps.data.dispo == '0'" @click="AjouteDansPanier(slotProps.data.id)"></Button>
 							<span :class="'product-badge status-'+slotProps.data.dispo.toString().toLowerCase()">{{slotProps.data.dispo}}</span>
 						</div>
 					</div>
@@ -62,6 +62,7 @@
 				</div>
 			</template>
 		</DataView>
+		
 	</div>
 </template>
 
@@ -142,6 +143,7 @@ export default {
         },
 		AjouteDansPanier(idPokemon){
 			
+
 			const token = window.sessionStorage.getItem('token');
 
 			//const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6Miwibm9tIjoiUGlsbGlwZSIsIm1kcCI6IjliMWRiNjU3NGI3MWM0OGJjOTk2Yjc1MzY0MzdkNGQ1NzAzOWVmYjQwMTEwYzM5MDRiY2YzZjMzMzU1NzM2ZTI0ZmQwOTMyNzQzNjcyNTljNTYyMGVjNTRjYTMwZDRjZWU1YjZiZmRmOTlmY2M4NWE3MDY0YjBlYzVjY2I0NzYzIiwibWFpbCI6InBoaWxsaXBlLmxhZG1pbkBnbWFpbC5jb20iLCJhZG1pbiI6MSwiaWF0IjoxNjQyMTcxMjAzfQ.O2p4n7zAEGDllwkFr9VkvAjIRTjAvI010_p3n3k9lQY'
@@ -159,10 +161,13 @@ export default {
             API_BACK.post('/ajoutePokemonPanier/'+idPokemon+'/1', null,config)
                 .then(response => {
                     console.log(response);
+					
+					
                 })
                 .catch(e => {
                     console.error("CRASH" + e);
                 })
+
 		},
 		ClicSurArticle(idPokemon){
 			console.log(idPokemon)
