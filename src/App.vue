@@ -2,7 +2,7 @@
  <div>
     <!-- header -->     
       
-     <h1>PokeShope  </h1>  
+     <h1>PokeShop  </h1>  
     <Bonjour/>
        
 
