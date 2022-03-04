@@ -21,11 +21,11 @@ export default {
     computed: {
         user2 : function(){
             return window.sessionStorage.getItem('user')
-        } ,
+        },
         isAuth : function(){
             return window.sessionStorage.getItem('user')            
         },
-         deconnexion : function(){
+        deconnexion : function(){
             window.sessionStorage.removeItem('user')
             window.sessionStorage.removeItem('token')
 

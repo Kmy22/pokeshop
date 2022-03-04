@@ -43,7 +43,7 @@ export default defineComponent({
             window.sessionStorage.setItem('token', response.data.token);
             window.sessionStorage.setItem('user', text_user.value);
 
-            router.push('/') ;            
+            //router.push('/') ;            
             window.location.reload();
             //router.push('/') ;          
             
@@ -63,6 +63,11 @@ export default defineComponent({
         text_pwd,     
         connexion
       }
+  },
+  created(){
+    if (window.sessionStorage.getItem('user')) {
+      router.push('/') ;
+    }
   }
 })
 
