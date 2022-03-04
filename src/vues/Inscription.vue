@@ -50,8 +50,8 @@ export default defineComponent({
             //window.sessionStorage.setItem('token', response.data.token);
             //window.sessionStorage.setItem('user', text_user.value);
 
-            router.push('/') ;            
-            window.location.reload();
+            router.push('/Connexion') ;            
+            //window.location.reload();
             //router.push('/') ;          
             
           } else {
