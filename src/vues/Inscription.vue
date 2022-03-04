@@ -33,13 +33,21 @@ export default defineComponent({
 
     const inscription = () => {
       //console.log(text_user.value + " " + text_pwd.value);
+
+      if (text_user.value == "" || text_pwd.value == "" || text_mail.value == "") {
+        toast.add({sererity: 'info', summary: 'Inscription Impossible', detail: "Les champs sont obligatoires" });
+        return
+      }
+
+
+
       const params = new URLSearchParams()
       params.append('login', text_user.value)
       params.append('pwd', text_pwd.value)
       params.append('mail', text_mail.value)
 
-
-      console.log("OUAIS LE MAIL : "+text_mail.value)
+      
+      
 
       API_BACK.post('/inscription', params)
         .then(response => {
