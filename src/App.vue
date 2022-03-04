@@ -2,7 +2,9 @@
  <div>
     <!-- header -->     
       
-     <h1>PokeShop  </h1>  
+      <img src="PokeShop.png" style="
+  width: 25%;
+  height: auto;"> 
     <Bonjour/>
        
 
