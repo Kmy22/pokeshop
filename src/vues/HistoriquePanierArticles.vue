@@ -2,7 +2,7 @@
 <template>
     <div>
         <div class="card">
-            <h1> Panier commandé le {{datePanier}}. Prix total : {{prixTotPanier}} </h1>
+            <h1> Panier commandé le {{datePanier}}. Prix total : {{prixTotPanier}} $ </h1>
             <DataTable ref="dt" :value="products" dataKey="id" >
                 
 
@@ -22,8 +22,8 @@
                 <Column field="dispo" header="Disponibilite" :sortable="true" style="min-width:10rem"></Column>
                 <Column field="categorie" header="Categorie" :sortable="true" style="min-width:15rem"></Column>
                 <Column field="quantite" header="Quantite" :sortable="true" style="min-width:15rem"></Column>
-                <Column field="prix" header="Prix/u" :sortable="true" style="min-width:15rem"></Column>
-                <Column field="prixTot" header="Prix total ligne" :sortable="true" style="min-width:16rem"></Column>
+                <Column field="prix" header="Prix/u ($)" :sortable="true" style="min-width:15rem"></Column>
+                <Column field="prixTot" header="Prix total ligne ($)" :sortable="true" style="min-width:16rem"></Column>
                 <Column :exportable="false" style="min-width:8rem">
                     <template #body="slotProps">
                         <Button icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" @click="ajouteComm(slotProps.data.idPokemon)" />

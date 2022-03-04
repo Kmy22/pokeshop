@@ -2,7 +2,7 @@
 <template>
     <div>
         <div class="card">
-            <h1> Prix total du panier : {{prixTotPanier}} </h1>
+            <h1> Prix total du panier : {{prixTotPanier}} $ </h1>
             <Button label="Passer la commande" icon="pi pi-fw pi-shopping-cart" class="p-button-text" @click="paye" />
 
             <DataTable ref="dt" :value="products" dataKey="id" >
@@ -24,8 +24,8 @@
                 <Column field="dispo" header="Disponibilite" :sortable="true" style="min-width:16rem"></Column>
                 <Column field="categorie" header="Categorie" :sortable="true" style="min-width:16rem"></Column>
                 <Column field="quantite" header="Quantite" :sortable="true" style="min-width:16rem"></Column>
-                <Column field="prix" header="Prix/u" :sortable="true" style="min-width:16rem"></Column>
-                <Column field="prixTot" header="Prix total ligne" :sortable="true" style="min-width:16rem"></Column>
+                <Column field="prix" header="Prix/u ($)" :sortable="true" style="min-width:16rem"></Column>
+                <Column field="prixTot" header="Prix total ligne ($)" :sortable="true" style="min-width:16rem"></Column>
             </DataTable>
         </div>
 	</div>
